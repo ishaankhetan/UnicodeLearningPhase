@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+  <html>
+      <head>
+          <meta charset="utf-8">
+          <title>Budget Management-signup</title>
+      </head>
+  
+      <body text="white" bgcolor="black"> <!--The style value attribute helps in recognizing the string formatting done in our python code   style="white-space:pre-wrap"-->
+        <p style = "font-family:georgia,garamond,serif;font-size:70px;font-style:bold;">
+        Sign up:
+        </p>
+        <form method="POST" class="post-form">  
+          {% csrf_token %}  
+          {{ form.as_p }}  
+          <button type="submit" class="save btn btn-default">Save</button>  
+        </form>  
+     </body>
+ </html>

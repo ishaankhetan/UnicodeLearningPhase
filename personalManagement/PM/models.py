@@ -5,28 +5,15 @@ from django.utils.timezone import now
 
 class User(models.Model):
     user_ID=models.BigIntegerField(primary_key=True)
-    first_name=models.CharField(max_length=30)
-    last_name=models.CharField(max_length=30)
+    first_name=models.CharField(max_length=30,default="")
+    last_name=models.CharField(max_length=30,default="")
+    password=models.CharField(max_length=30,default="pass123")
     email=models.EmailField()
     phone=models.BigIntegerField()
     address=models.CharField(max_length=100)
     total_income=models.IntegerField(default=0)
     total_expense=models.IntegerField(default=0)
     total_savings=models.IntegerField(default=0)
-
-'''class UserExpense(models.Model):
-    class Meta:
-        verbose_name_plural="User Expenses"
-    user_expense_ID=models.IntegerField(primary_key=True)
-    user_ID=models.OneToOneField(User,on_delete=models.CASCADE,default=1)
-    
-
-class UserIncome(models.Model):
-    class Meta:
-        verbose_name_plural="User Incomes"
-    user_income_ID=models.IntegerField(primary_key=True)
-    user_ID=models.OneToOneField(User,on_delete=models.CASCADE,default=1)'''
-   
 
 class Expense(models.Model):
     class Meta:
