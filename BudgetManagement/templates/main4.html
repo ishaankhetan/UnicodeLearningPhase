@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+  Hi {{ user.username }}!
+  <p>
+  Add new....</p> 
+  <p> <a href='http://127.0.0.1:8000/income'>Income</a>   </p>
+   <p>  <a href='http://127.0.0.1:8000/expense'>Expense</a></p>
+   
+   <p>  <a href='http://127.0.0.1:8000/view'>DETAILS</a></p>
+  <p><a href="{% url 'logout' %}">logout</a></p>
+
+{% else %}
+  <p>You are not logged in</p>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+
+{% endblock %}

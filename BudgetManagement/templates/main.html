@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+Hi!!!
+
+  <p>
+  Please enter a few more details.....</p>
+  Please select your username...
+  <form method="post">
+    {% csrf_token %}
+    
+    {{ form.as_p }}
+    <button type="submit">Enter</button>
+  </form>
+  <p><a href="{% url 'logout' %}">logout</a></p>
+  <p>
+    <a href='http://127.0.0.1:8000'>HOME</a></p>
+
+{% endblock %}
